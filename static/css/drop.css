@@ -1,0 +1,63 @@
+.boox{
+    padding-left: 40px;
+
+}
+
+.sdbox{
+    display: flex;
+    flex-direction: row;
+}
+.profile img {
+    width: 45px;
+    border-radius: 25px;
+    height: 45px;
+}
+
+.drp_box {
+    border-radius: 20px;
+    width: 120px;
+    position: absolute;
+    padding: 0 10px;
+    background-color:whitesmoke;
+    display: flex;
+    font-size: 15px;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s;
+    right: 50px;
+    color: black;
+    font-weight: bold;
+}
+
+.drp_box.open {
+        width: 120px;
+    padding-top: 5px;
+    visibility: visible;
+    opacity: 1;
+
+}
+
+
+.drp_box ul li {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.drp_box ul li:hover {
+    color: aqua;
+    transition: .5s;
+
+}
+
+a {
+    text-decoration: none;
+    transition: .5s;
+    color: #000;
+}
+
+a:hover {
+    color: greenyellow;
+}
+
+

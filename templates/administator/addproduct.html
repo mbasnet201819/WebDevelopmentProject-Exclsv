@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./.././../static/css/adminstyle.css">
+</head>
+<body>
+
+
+<section class="home-section" id="section1">
+
+    <div class="home-content">
+
+        <div class="overview-boxes">
+
+
+        </div>
+
+        <div class="sales-boxes">
+
+            <div class="recent-sales box">
+                <div class="title">Add Product</div>
+
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Product Name</th>
+                        <th>Discount Percent</th>
+                        <th>Final Price</th>
+                        <th>Previous Price</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <form action="/product_create" method="POST" class="" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <tr>
+                            <td><input type="file" name="image" class="form-control"/></td>
+                            <td><input type="text" name="productname" onfocusout="fn()" placeholder="Product Name"
+                                       required></td>
+                            <td><input type="text" name="discount" placeholder="Discount Percent" required></td>
+                            <td><input type="text" name="finalprice" placeholder="Final Price" required></td>
+                            <td><input type="text" name="previousprice" placeholder="Previous Price"></td>
+                            <td>
+                                <div class="button">
+                                    <input type="submit" value="Add" class="sign-btn"/>
+                                </div>
+
+                            </td>
+
+                        </tr>
+                    </form>
+
+                    </tbody>
+                </table>
+                <br/>
+                <br/>
+                <br/>
+                <div class="">
+                    <a href="/show"><< Admin Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<script>
+    let toggle = document.querySelector('.toggle');
+    let navigation = document.querySelector('.navigation');
+    let main = document.querySelector('.main');
+
+    toggle.onclick = function () {
+        navigation.classList.toggle('active')
+        main.classList.toggle('active')
+    }
+
+    let list = document.querySelectorAll('.navigation li');
+
+    function activeLink() {
+        list.forEach((item) =>
+            item.classList.remove('hovered'));
+        this.classList.add('hovered')
+    }
+
+    list.forEach((items) =>
+        item.addEventListener('mouseover', activeLink));
+</script>
+</body>
+</html>

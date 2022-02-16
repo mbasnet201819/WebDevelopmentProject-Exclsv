@@ -1,0 +1,206 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclsv</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+
+    {#    <link rel="stylesheet" href="{% static 'css/style.css' %}">#}
+    <link rel="stylesheet" href="./.././../static/css/style.css"/>
+
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<header>
+
+    <div class="header-1">
+
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="" height="60px" width="100%"/>
+        </div>
+
+
+        <form action="" class="search-box-container">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+    </div>
+
+    <div class="header-2">
+
+        <div id="menu-bar" class="fas fa-bars"></div>
+
+        <nav class="navbar">
+            <a href="/Main">home</a>
+            <a href="#category">category</a>
+            <a href="Sale/">product</a>
+        </nav>
+
+        <div class="icons">
+            <a href="#" class="fas fa-shopping-cart"></a>
+            <a href="#" class="fas fa-heart"></a>
+            <a href="/logout" class="fas fa-user-circle"></a>
+        </div>
+
+    </div>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="image">
+        <img src="/static/images/home-img.png" height="500px">
+    </div>
+
+    <div class="content">
+        <span>Everythings you need</span>
+        <h3>find it love it buy it</h3>
+        <a href="#" class="btn">get started</a>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- banner section starts  -->
+
+<section class="banner-container">
+
+    <div class="banner">
+        <img src="/static/images/banner-1.png" alt="">
+        <div class="content">
+            <h3>special offer</h3>
+            <p>upto 45% off</p>
+            <a href="#" class="btn">check out</a>
+        </div>
+    </div>
+
+    <div class="banner">
+        <img src="/static/images/banner-2.png" alt="">
+        <div class="content">
+            <h3>limited offer</h3>
+            <p>upto 50% off</p>
+            <a href="#" class="btn">check out</a>
+        </div>
+    </div>
+
+</section>
+
+<!-- banner section ends -->
+
+<!-- category section starts  -->
+
+<section class="category" id="category">
+
+    <h1 class="heading"><span>category</span></h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>Shoes</h3>
+            <p>upto 50% off</p>
+            <img src="/static/images/category-1.png" alt="">
+            <a href="#" class="btn">shop now</a>
+        </div>
+        <div class="box">
+            <h3>Hoodies</h3>
+            <p>upto 44% off</p>
+            <img src="/static/images/category-2.png" alt="">
+            <a href="#" class="btn">shop now</a>
+        </div>
+
+
+        <div class="box">
+            <h3>Headphone</h3>
+            <p>upto 35% off</p>
+            <img src="/static/images/category-3.png" alt="">
+            <a href="#" class="btn">shop now</a>
+        </div>
+
+        <div class="box">
+            <h3>Mobile</h3>
+            <p>upto 12% off</p>
+            <img src="/static/images/category-4.png" alt="">
+            <a href="#" class="btn">shop now</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- category section ends -->
+
+<!-- product section starts  -->
+
+
+
+
+<!-- product section ends -->
+
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3> Exclsv </h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam, saepe.</p>
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#" class="links"> <i class="fas fa-phone"></i> +977 9818201247 </a>
+            <a href="#" class="links"> <i class="fas fa-phone"></i> +977 9818201247 </a>
+            <a href="#" class="links"> <i class="fas fa-envelope"></i> fashionhub@gmail.com </a>
+            <a href="#" class="links"> <i class="fas fa-map-marker-alt"></i> kathmandu, nepal - 410006 </a>
+        </div>
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#" class="links"> <i class="fas fa-arrow-right"></i> home </a>
+            <a href="#" class="links"> <i class="fas fa-arrow-right"></i> products </a>
+            <a href="#" class="links"> <i class="fas fa-arrow-right"></i> categories </a>
+        </div>
+
+        <div class="box">
+            <h3>newsletter</h3>
+            <p>subscribe for latest updates</p>
+            <input type="email" placeholder="your email" class="email">
+            <input type="submit" value="subscribe" class="btn">
+
+        </div>
+
+    </div>
+
+
+</section>
+
+<!-- footer section ends -->
+
+
+<!-- custom js file link  -->
+<script src="/static/js/script.js"></script>
+
+</body>
+</html>

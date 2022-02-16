@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./.././../static/css/adminstyle.css">
+</head>
+<body>
+<div class="container">
+    <div class="navigation">
+        <ul>
+            <li>
+                <a href="#">
+                    <span class="icon "><ion-icon name="cart-outline"></ion-icon></span>
+                    <span class="title ">Brand Name</span>
+                </a>
+            </li>
+            <li>
+                <a href="/show">
+                    <span class="icon "><ion-icon name="bag-handle-outline"></ion-icon></span>
+                    <span class="title ">Product</span>
+                </a>
+            </li>
+            <li>
+                <a href="/cust">
+                    <span class="icon "><ion-icon name="people-outline"></ion-icon></span>
+                    <span class="title ">Customer</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="/logout">
+                    <span class="icon "><ion-icon name="log-out-outline"></ion-icon></span>
+                    <span class="title ">Log Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <div class="topbar">
+            <div class="toggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+            <div class="search">
+                <label>
+                    <input type="text" placeholder="Search here">
+                    <ion-icon name="search-outline"></ion-icon>
+                </label>
+            </div>
+            <div class="user">
+                <img src="#" alt="">
+            </div>
+        </div>
+
+
+        <section class="home-section" id="section1">
+
+            <div class="home-content">
+
+                <div class="overview-boxes">
+
+
+                </div>
+
+                <div class="sales-boxes">
+
+                    <div class="recent-sales box">
+                        <div class="title">Products</div>
+                        <div class="buttonadd">
+                            <a href="/create">Add</a>
+                        </div>
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Password</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for c in customer %}
+                                <tr>
+                                    <td>{{ c.id }}</td>
+                                    <td>{{ c.name }}</td>
+                                    <td>{{ c.email }}</td>
+                                    <td>{{ c.password }}</td>
+                                    <td>
+                                        <div class="">
+                                            <a href="{% url 'cdelete' c.id %}">Delete</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<script>
+    let toggle = document.querySelector('.toggle');
+    let navigation = document.querySelector('.navigation');
+    let main = document.querySelector('.main');
+
+    toggle.onclick = function () {
+        navigation.classList.toggle('active')
+        main.classList.toggle('active')
+    }
+
+    let list = document.querySelectorAll('.navigation li');
+
+    function activeLink() {
+        list.forEach((item) =>
+            item.classList.remove('hovered'));
+        this.classList.add('hovered')
+    }
+
+    list.forEach((items) =>
+        item.addEventListener('mouseover', activeLink));
+</script>
+</body>
+</html>
