@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="./.././../static/css/payment.css">
+
+</head>
+<body>
+
+<div class="container">
+
+    <form action="/order_create" method="POST">
+        {% csrf_token %}
+
+        <div class="row">
+
+            <div class="col">
+
+                <h3 class="title">billing address</h3>
+
+                <div class="inputBox">
+                    <span>full name :</span>
+                    <input type="text" placeholder="john deo" name="fullname" required>
+                </div>
+                <div class="inputBox">
+                    <span>phone :</span>
+                    <input type="number" name="phonenumber" placeholder="98******" required>
+                </div>
+                <div class="inputBox">
+                    <span>address :</span>
+                    <input type="text" name="address" placeholder="room - street - locality" required>
+                </div>
+                <div class="inputBox">
+                    <span>city :</span>
+                    <input type="text" name="city" placeholder="kathmandu" required>
+                </div>
+                <div class="inputBox">
+                    <span>zipcode :</span>
+                    <input type="text" name="zipcode" placeholder="zip code" required>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+        <input type="submit" value="Order Nowt" class="submit-btn">
+
+    </form>
+
+</div>
+
+</body>
+</html>
