@@ -1,11 +1,16 @@
 from django.shortcuts import render, redirect
 
-from product.forms import ProductForm
-from product.models import Product
+from product.forms import ProductForm, OrderForm
+from product.models import Product, Order
 
 
 def create(request):  # add product page
     return render(request, 'administator/addproduct.html')
+
+
+def order(request):  # add product page
+    ord = Order.objects.all()
+    return render(request, 'administator/orders.html', {'order': ord})
 
 
 def product_create(request):
@@ -14,10 +19,22 @@ def product_create(request):
         form = ProductForm(request.POST, request.FILES)
         form.save()
         print("uploaded to database")
-        return redirect("/create")
+        return redirect("/order")
     else:
         form = ProductForm()
     return render(request, "administator/admin.html", {'form': form})
+
+
+def order_create(request):
+    if request.method == "POST":
+        print(request.POST)
+        form = OrderForm(request.POST, request.FILES)
+        form.save()
+        print("uploaded to database")
+        return redirect("Sale")
+    else:
+        form = OrderForm()
+    return render(request, "Main/payment.html", {'form': form})
 
 
 def Sale(request):
@@ -41,3 +58,9 @@ def pdelete(request, p_id):
     product = Product.objects.get(id=p_id)
     product.delete()
     return redirect("/show")
+
+
+def odelete(request, p_id):
+    order = Order.objects.get(id=p_id)
+    order.delete()
+    return redirect("/order")
